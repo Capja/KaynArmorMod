@@ -3,11 +3,23 @@
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>Kayn_CinturonCupulaDefensiva</defName>
     <label>cinturón proyector de cúpula</label>
-    <description>Genera una cúpula esférica a su alrededor que desintegra los disparos enemigos que entran, permitiendo a los aliados disparar desde el interior.</description>
+    
+    <tickerType>Normal</tickerType>
+
+    <description>Genera una cúpula esférica a su alrededor que desintegra los disparos enemigos que entran...</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+
+    <!-- ESTADÍSTICAS OBLIGATORIAS (Incluyendo masa/peso) -->
+    <statBases>
+      <WorkToMake>14000</WorkToMake>
+      <Mass>3.0</Mass>
+      <Flammability>0.4</Flammability>
+      <EquipDelay>2.0</EquipDelay>
+    </statBases>
+
     <costList>
       <Plasteel>50</Plasteel>
       <Uranium>20</Uranium>
@@ -34,10 +46,12 @@
     <comps>
       <li Class="KaynArmorMod.CompProperties_EnergyToggle">
         <compClass>KaynArmorMod.CompShieldItem</compClass>
-        <maxEnergy>150</maxEnergy>
-        <energyDrainRatePerTick>0.12</energyDrainRatePerTick>
-        <energyRechargeRatePerTick>0.04</energyRechargeRatePerTick>
-        <toggleIconPath>UI/Commands/ShieldToggle</toggleIconPath>
+        <maxEnergy>200</maxEnergy>
+        <energyDrainRatePerTick>0.03</energyDrainRatePerTick>   <!-- Dura más de 1 minuto y medio continuo -->
+        <energyRechargeRatePerTick>0.10</energyRechargeRatePerTick> <!-- Recarga completa en ~30s al estar apagado -->
+        <toggleLabel>Cúpula Protectora</toggleLabel>
+        <toggleDesc>Despliega un escudo cinético. Se recarga cuando está apagado.</toggleDesc>
+        <toggleIconPath>UI/Abilities/GuardianSkipbarrier</toggleIconPath>
       </li>
     </comps>
   </ThingDef>

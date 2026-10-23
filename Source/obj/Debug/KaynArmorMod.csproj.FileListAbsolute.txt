@@ -10,3 +10,5 @@ C:\Programacion\KaynArmorMod\source\obj\Debug\KaynArmorMod.dll
 C:\Programacion\KaynArmorMod\source\obj\Debug\KaynArmorMod.pdb
 C:\Programacion\KaynArmorMod\1.6\Assemblies\KaynArmorMod.dll
 C:\Programacion\KaynArmorMod\1.6\Assemblies\KaynArmorMod.pdb
+C:\Programacion\KaynArmorMod\source\obj\Debug\KaynArmorMod.sourcelink.json
+C:\Programacion\KaynArmorMod\source\obj\Debug\KaynArmo.7B205D73.Up2Date

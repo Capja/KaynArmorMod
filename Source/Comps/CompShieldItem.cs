@@ -9,68 +9,54 @@ namespace KaynArmorMod
     [StaticConstructorOnStartup]
     public class CompShieldItem : CompEnergyToggleBase
     {
+        public static readonly HashSet<CompShieldItem> ActiveShields = new HashSet<CompShieldItem>();
+
         public float shieldRadius = 3.9f;
-        public float energyCostPerAbsorb = 12f;
+        public float energyCostPerAbsorb = 4f;
 
         private static readonly Material ShieldBubbleMat = MaterialPool.MatFrom("Other/ShieldBubble", ShaderDatabase.Transparent);
 
         protected override void OnActivated()
         {
-            SoundDefOf.EnergyShield_Reset.PlayOneShot(new TargetInfo(Wearer.PositionHeld, Wearer.MapHeld));
+            ActiveShields.Add(this);
+            SoundDef.Named("EnergyShield_Reset").PlayOneShot(new TargetInfo(Wearer.PositionHeld, Wearer.MapHeld));
         }
 
         protected override void OnDeactivated()
         {
+            ActiveShields.Remove(this);
             SoundDef.Named("EnergyShield_Broken").PlayOneShot(new TargetInfo(Wearer.PositionHeld, Wearer.MapHeld));
+        }
+
+
+
+        public override void Notify_Unequipped(Pawn pawn)
+        {
+            base.Notify_Unequipped(pawn);
+            ActiveShields.Remove(this);
+            Toggle(false);
         }
 
         protected override void OnActiveTick()
         {
-            Pawn pawn = Wearer;
-            if (pawn == null || pawn.Map == null || pawn.Dead)
+            if (Wearer == null || Wearer.Dead)
             {
                 Toggle(false);
-                return;
-            }
-
-            // Cada 3 ticks revisamos proyectiles para no sobrecargar la CPU
-            if (pawn.IsHashIntervalTick(3))
-            {
-                InterceptProjectiles(pawn);
             }
         }
 
-        private void InterceptProjectiles(Pawn pawn)
+        // Método que ejecuta Harmony al chocar la bala
+        public void AbsorbProjectile(Projectile proj)
         {
-            Vector3 center = pawn.DrawPos;
-            List<Thing> projectiles = pawn.Map.listerThings.ThingsInGroup(ThingRequestGroup.Projectile);
+            SoundDef.Named("EnergyShield_Reset").PlayOneShot(new TargetInfo(proj.Position, Wearer.Map));
+            FleckMaker.ThrowMicroSparks(proj.ExactPosition, Wearer.Map);
+            proj.Destroy(DestroyMode.Vanish);
 
-            for (int i = projectiles.Count - 1; i >= 0; i--)
+            currentEnergy -= energyCostPerAbsorb;
+            if (currentEnergy <= 0f)
             {
-                Projectile proj = projectiles[i] as Projectile;
-                if (proj == null || !proj.Spawned) continue;
-
-                // Si el proyectil lo disparó el propio usuario del escudo, se ignora (puede disparar hacia fuera)
-                if (proj.Launcher == pawn) continue;
-
-                float dist = Vector3.Distance(proj.ExactPosition, center);
-                if (dist <= shieldRadius)
-                {
-                    // Interceptar el proyectil
-                    SoundDefOf.EnergyShield_AbsorbDamage.PlayOneShot(new TargetInfo(proj.Position, pawn.Map));
-                    FleckMaker.ThrowMicroSparks(proj.ExactPosition, pawn.Map);
-
-                    proj.Destroy(DestroyMode.Vanish);
-
-                    // Consumir energía por el impacto
-                    currentEnergy -= energyCostPerAbsorb;
-                    if (currentEnergy <= 0f)
-                    {
-                        currentEnergy = 0f;
-                        Toggle(false);
-                        break;
-                    }
-                }
+                currentEnergy = 0f;
+                Toggle(false);
             }
         }
 
@@ -80,19 +66,12 @@ namespace KaynArmorMod
             if (isActive && Wearer != null)
             {
                 Vector3 drawPos = Wearer.Drawer.DrawPos;
-                // Cambiado AltitudeGroup por AltitudeLayer:
                 drawPos.y = AltitudeLayer.MoteOverhead.AltitudeFor();
 
                 Matrix4x4 matrix = default;
                 matrix.SetTRS(drawPos, Quaternion.identity, new Vector3(shieldRadius * 2f, 1f, shieldRadius * 2f));
                 Graphics.DrawMesh(MeshPool.plane10, matrix, ShieldBubbleMat, 0);
             }
-        }
-
-        public override void Notify_Unequipped(Pawn pawn)
-        {
-            base.Notify_Unequipped(pawn);
-            Toggle(false);
         }
     }
 }

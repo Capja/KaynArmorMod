@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Programacion\\KaynArmorMod\\Source\\KaynArmorMod.csproj": {}
+    "C:\\Programacion\\KaynArmorMod\\source\\KaynArmorMod.csproj": {}
   },
   "projects": {
-    "C:\\Programacion\\KaynArmorMod\\Source\\KaynArmorMod.csproj": {
+    "C:\\Programacion\\KaynArmorMod\\source\\KaynArmorMod.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programacion\\KaynArmorMod\\Source\\KaynArmorMod.csproj",
+        "projectUniqueName": "C:\\Programacion\\KaynArmorMod\\source\\KaynArmorMod.csproj",
         "projectName": "KaynArmorMod",
-        "projectPath": "C:\\Programacion\\KaynArmorMod\\Source\\KaynArmorMod.csproj",
+        "projectPath": "C:\\Programacion\\KaynArmorMod\\source\\KaynArmorMod.csproj",
         "packagesPath": "C:\\Users\\jose-\\.nuget\\packages\\",
-        "outputPath": "C:\\Programacion\\KaynArmorMod\\Source\\obj\\",
+        "outputPath": "C:\\Programacion\\KaynArmorMod\\source\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -56,6 +56,10 @@
             "Krafs.Rimworld.Ref": {
               "target": "Package",
               "version": "[1.7.*-*, )"
+            },
+            "Lib.Harmony": {
+              "target": "Package",
+              "version": "[2.3.*, )"
             }
           },
           "imports": [
@@ -357,6 +361,10 @@
             "Krafs.Rimworld.Ref": {
               "target": "Package",
               "version": "[1.6.*, )"
+            },
+            "Lib.Harmony": {
+              "target": "Package",
+              "version": "[2.3.*, )"
             },
             "Microsoft.NETFramework.ReferenceAssemblies": {
               "suppressParent": "All",

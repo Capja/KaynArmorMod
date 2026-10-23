@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "OaKIXBrVJ7A=",
+  "dgSpecHash": "qWP5567OAZQ=",
   "success": true,
-  "projectFilePath": "C:\\Programacion\\KaynArmorMod\\Source\\KaynArmorMod.csproj",
+  "projectFilePath": "C:\\Programacion\\KaynArmorMod\\source\\KaynArmorMod.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jose-\\.nuget\\packages\\krafs.rimworld.ref\\1.6.4871\\krafs.rimworld.ref.1.6.4871.nupkg.sha512",
     "C:\\Users\\jose-\\.nuget\\packages\\krafs.rimworld.ref\\1.7.4985-unstable\\krafs.rimworld.ref.1.7.4985-unstable.nupkg.sha512",
+    "C:\\Users\\jose-\\.nuget\\packages\\lib.harmony\\2.3.6\\lib.harmony.2.3.6.nupkg.sha512",
     "C:\\Users\\jose-\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
     "C:\\Users\\jose-\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net48\\1.0.3\\microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg.sha512"
   ],

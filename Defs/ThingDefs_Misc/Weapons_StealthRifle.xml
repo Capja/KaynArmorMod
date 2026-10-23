@@ -3,11 +3,25 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Kayn_RifleSigilo</defName>
     <label>rifle táctico fantasma</label>
+
+    <tickerType>Normal</tickerType>
     <description>Un rifle de alta tecnología que emite un campo de refracción de luz sobre el tirador a costa de energía.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+
+    <!-- ESTADÍSTICAS OBLIGATORIAS (Incluyendo masa/peso) -->
+    <statBases>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.50</AccuracyLong>
+      <RangedWeapon_Cooldown>1.60</RangedWeapon_Cooldown>
+    </statBases>
+
     <costList>
       <Steel>80</Steel>
       <Plasteel>40</Plasteel>
@@ -27,9 +41,11 @@
       <li Class="KaynArmorMod.CompProperties_EnergyToggle">
         <compClass>KaynArmorMod.CompInvisibilityItem</compClass>
         <maxEnergy>100</maxEnergy>
-        <energyDrainRatePerTick>0.10</energyDrainRatePerTick> <!-- ~16 segundos continuos -->
+        <energyDrainRatePerTick>0.10</energyDrainRatePerTick>
         <energyRechargeRatePerTick>0.05</energyRechargeRatePerTick>
-        <toggleIconPath>UI/Commands/InvisibilityToggle</toggleIconPath>
+        <toggleLabel>Camuflaje Óptico</toggleLabel>
+        <toggleDesc>Activa un campo de sigilo que vuelve invisible al tirador mientras no dispare.</toggleDesc>
+        <toggleIconPath>UI/Abilities/Invisibility</toggleIconPath>
       </li>
     </comps>
     <verbs>

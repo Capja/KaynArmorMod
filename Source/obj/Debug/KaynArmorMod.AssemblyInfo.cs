@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KaynArmorMod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f4f2523781849e9f678bb180addafb10ac4b1e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("KaynArmorMod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KaynArmorMod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
