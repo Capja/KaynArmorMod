@@ -40,7 +40,7 @@
     <comps>
       <li Class="KaynArmorMod.CompProperties_EnergyToggle">
         <compClass>KaynArmorMod.CompInvisibilityItem</compClass>
-        <maxEnergy>100</maxEnergy>
+        <maxEnergy>200</maxEnergy>
         <energyDrainRatePerTick>0.10</energyDrainRatePerTick>
         <energyRechargeRatePerTick>0.05</energyRechargeRatePerTick>
         <toggleLabel>Camuflaje Óptico</toggleLabel>

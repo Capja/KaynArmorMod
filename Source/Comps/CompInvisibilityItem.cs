@@ -6,7 +6,7 @@ namespace KaynArmorMod
     public class CompInvisibilityItem : CompEnergyToggleBase
     {
         private Hediff invisibilityHediff;
-        public bool breakOnAttack = true;
+        public bool breakOnAttack = false;
 
         // Obtiene el Hediff de forma segura sin requerir DLCs obligatorios
         private static HediffDef InvisDef => DefDatabase<HediffDef>.GetNamedSilentFail("Kayn_Invisibilidad") 
