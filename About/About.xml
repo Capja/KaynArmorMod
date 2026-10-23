@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>KaynArmorMod</name>
+  <author>KPL</author>
+  <packageId>KPL.KaynArmorMod</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+    <li>1.7</li>
+  </supportedVersions>
+  <description>Añade equipo modular con baterías activas y habilidades de sigilo y defensa.</description>
+</ModMetaData>

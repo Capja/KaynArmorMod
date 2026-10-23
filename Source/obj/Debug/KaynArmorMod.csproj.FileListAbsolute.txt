@@ -1,0 +1,12 @@
+C:\Programacion\KaynArmorMod\source\obj\Debug\KaynArmorMod.csproj.AssemblyReference.cache
+C:\Programacion\KaynArmorMod\source\obj\Debug\KaynArmorMod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programacion\KaynArmorMod\source\obj\Debug\KaynArmorMod.AssemblyInfoInputs.cache
+C:\Programacion\KaynArmorMod\source\obj\Debug\KaynArmorMod.AssemblyInfo.cs
+C:\Programacion\KaynArmorMod\source\obj\Debug\KaynArmorMod.csproj.CoreCompileInputs.cache
+C:\Programacion\KaynArmorMod\1.7\Assemblies\KaynArmorMod.deps.json
+C:\Programacion\KaynArmorMod\1.7\Assemblies\KaynArmorMod.dll
+C:\Programacion\KaynArmorMod\1.7\Assemblies\KaynArmorMod.pdb
+C:\Programacion\KaynArmorMod\source\obj\Debug\KaynArmorMod.dll
+C:\Programacion\KaynArmorMod\source\obj\Debug\KaynArmorMod.pdb
+C:\Programacion\KaynArmorMod\1.6\Assemblies\KaynArmorMod.dll
+C:\Programacion\KaynArmorMod\1.6\Assemblies\KaynArmorMod.pdb

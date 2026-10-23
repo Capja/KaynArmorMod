@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>Kayn_Invisibilidad</defName>
+    <label>camuflaje óptico</label>
+    <description>Un campo de refracción electromagnético hace invisible al usuario.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Invisibility" />
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+</Defs>

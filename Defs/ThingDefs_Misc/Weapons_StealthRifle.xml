@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Kayn_RifleSigilo</defName>
+    <label>rifle táctico fantasma</label>
+    <description>Un rifle de alta tecnología que emite un campo de refracción de luz sobre el tirador a costa de energía.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <Steel>80</Steel>
+      <Plasteel>40</Plasteel>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>Kayn_TecnologiaTacticoEnergetica</researchPrerequisite>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <comps>
+      <li Class="KaynArmorMod.CompProperties_EnergyToggle">
+        <compClass>KaynArmorMod.CompInvisibilityItem</compClass>
+        <maxEnergy>100</maxEnergy>
+        <energyDrainRatePerTick>0.10</energyDrainRatePerTick> <!-- ~16 segundos continuos -->
+        <energyRechargeRatePerTick>0.05</energyRechargeRatePerTick>
+        <toggleIconPath>UI/Commands/InvisibilityToggle</toggleIconPath>
+      </li>
+    </comps>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_ChargeRifle</defaultProjectile>
+        <warmupTime>0.9</warmupTime>
+        <range>26</range>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+      </li>
+    </verbs>
+  </ThingDef>
+</Defs>

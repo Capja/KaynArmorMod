@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Kayn_CinturonCupulaDefensiva</defName>
+    <label>cinturón proyector de cúpula</label>
+    <description>Genera una cúpula esférica a su alrededor que desintegra los disparos enemigos que entran, permitiendo a los aliados disparar desde el interior.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <Uranium>20</Uranium>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>Kayn_TecnologiaTacticoEnergetica</researchPrerequisite>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+    </apparel>
+    <comps>
+      <li Class="KaynArmorMod.CompProperties_EnergyToggle">
+        <compClass>KaynArmorMod.CompShieldItem</compClass>
+        <maxEnergy>150</maxEnergy>
+        <energyDrainRatePerTick>0.12</energyDrainRatePerTick>
+        <energyRechargeRatePerTick>0.04</energyRechargeRatePerTick>
+        <toggleIconPath>UI/Commands/ShieldToggle</toggleIconPath>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>
